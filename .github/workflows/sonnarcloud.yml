@@ -31,6 +31,8 @@ jobs:
           echo "$(pwd)/sonar-scanner/bin" >> $GITHUB_PATH
       - name: Analyze with SonarCloud
         env:
+          JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.13-11/x64
+          PATH: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.13-11/x64/bin:$(pwd)/sonar-scanner/bin:$PATH
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
