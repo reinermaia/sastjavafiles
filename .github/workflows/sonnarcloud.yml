@@ -30,6 +30,7 @@ jobs:
           mv sonar-scanner-4.8.0.2856-linux sonar-scanner
           echo "$(pwd)/sonar-scanner/bin" >> $GITHUB_PATH
       - name: Analyze with SonarCloud
+        shell: bash
         env:
           JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.13-11/x64
           PATH: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.13-11/x64/bin:$(pwd)/sonar-scanner/bin:$PATH
